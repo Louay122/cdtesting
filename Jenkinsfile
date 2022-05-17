@@ -12,7 +12,7 @@ pipeline{
         stage('Build'){
 
             steps{
-                sh 'docker build -t Helloapp .'
+                sh 'docker build -t helloapp .'
             }
 
         }
@@ -26,8 +26,8 @@ pipeline{
         stage('Push'){
 
             steps{
-                sh 'docker tag Helloapp:latest localhost:8085/docker-private-repo/Helloapp:latest'
-                sh 'docker push localhost:8085/docker-private-repo/my-app:latest'
+                sh 'docker tag helloapp:latest localhost:8085/docker-private-repo/helloapp:latest'
+                sh 'docker push localhost:8085/docker-private-repo/helloapp:latest'
             }
 
         }
