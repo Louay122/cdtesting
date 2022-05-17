@@ -30,7 +30,7 @@ function handler(req, res){
 // And have that server start listening for HTTP requests
 // The callback function is executed at some time in the future, when the server
 // is done with its long-running task (setting up the network and port etc)
-http.createServer(handler).listen(3000, function(err){
+http.createServer(handler).listen(process.env.PORT || 3000, function(err){
   if(err){
     console.log('Error starting http server');
   } else {
