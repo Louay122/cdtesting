@@ -12,22 +12,22 @@ pipeline{
         stage('Build'){
 
             steps{
-                sh 'docker build -t my-app .'
+                sh 'docker build -t Helloapp .'
             }
 
         }
 
         stage('Login'){
             steps{
-                sh 'echo $NEXUS_CREDENTIALS_PSW | docker login -u $NEXUS_CREDENTIALS_USR --password-stdin http://localhost:8095/repository/docker-private-repo/'
+                sh 'echo $NEXUS_CREDENTIALS_PSW | docker login -u $NEXUS_CREDENTIALS_USR --password-stdin http://localhost:8085/repository/docker-private-repo/'
             }
 
         }
         stage('Push'){
 
             steps{
-                sh 'docker tag my-app:latest localhost:8095/docker-private-repo/my-app:latest'
-                sh 'docker push localhost:8095/docker-private-repo/my-app:latest'
+                sh 'docker tag Helloapp:latest localhost:8085/docker-private-repo/Helloapp:latest'
+                sh 'docker push localhost:8085/docker-private-repo/my-app:latest'
             }
 
         }
