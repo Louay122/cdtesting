@@ -16,7 +16,7 @@ function handler(req, res){
     // The Express.js web framework helpfully does just that
     // For simplicity's sake we will always respond with 'hello world' here
     // var hello = req.body.hello;
-    var hello = 'World!';
+    var hello = 'World';
     res.setHeader('Content-Type', 'text/html');
     res.writeHead(200);
     res.end("<html><body><h1>Hello "+hello+"</h1></body></html>");
